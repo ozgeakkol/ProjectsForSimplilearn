@@ -1,2 +1,5 @@
 *.class
 .idea/**
+*.jar
+!libs/**/*.jar
+target/
