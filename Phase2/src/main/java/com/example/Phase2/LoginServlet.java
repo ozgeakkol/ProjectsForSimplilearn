@@ -1,5 +1,6 @@
 package com.example.Phase2;
 
+import com.example.Phase2.service.LoginService;
 import dao.LoginDao;
 
 import java.io.*;
@@ -11,13 +12,13 @@ public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        LoginDao loginDao = new LoginDao();
+        LoginService loginService = new LoginService();
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        if(loginDao.checkUserEmail(email)){
-            if(loginDao.checkUserPassword(email, password)){
+        if(loginService.checkUserEmail(email)){
+            if(loginService.checkUserPassword(email, password)){
                 request.setAttribute("email", email);
                 request.getRequestDispatcher("home.jsp").forward(request, response);
             }
