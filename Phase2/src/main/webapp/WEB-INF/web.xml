@@ -8,10 +8,22 @@
     <description></description>
     <display-name>Login</display-name>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>com.example.Phase2.LoginServlet</servlet-class>
+    <servlet-class>com.example.Phase2.servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/loginServlet</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>AddClass</display-name>
+    <servlet-name>AddClassServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.AddClassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddClassServlet</servlet-name>
+    <url-pattern>/addClass</url-pattern>
+  </servlet-mapping>
+
 </web-app>
