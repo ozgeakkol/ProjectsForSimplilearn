@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Student Portal</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="stylesheets/login.css">
 </head>
 <body>
 <h1><%= "Welcome to Student Portal!" %></h1>
