@@ -1,4 +1,4 @@
-package com.example.Phase2;
+package com.example.Phase2.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

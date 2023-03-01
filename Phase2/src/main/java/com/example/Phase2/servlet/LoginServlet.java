@@ -1,4 +1,4 @@
-package com.example.Phase2;
+package com.example.Phase2.servlet;
 
 import com.example.Phase2.service.LoginService;
 import dao.LoginDao;
@@ -19,7 +19,6 @@ public class LoginServlet extends HttpServlet {
 
         if(loginService.checkUserEmail(email)){
             if(loginService.checkUserPassword(email, password)){
-                request.setAttribute("email", email);
                 request.getRequestDispatcher("home.jsp").forward(request, response);
             }
             else{
