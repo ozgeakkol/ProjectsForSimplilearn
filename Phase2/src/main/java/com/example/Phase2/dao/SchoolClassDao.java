@@ -1,4 +1,4 @@
-package dao;
+package com.example.Phase2.dao;
 
 import com.example.Phase2.dbConfig.SimplilearnConfig;
 import com.example.Phase2.entity.SchoolClass;

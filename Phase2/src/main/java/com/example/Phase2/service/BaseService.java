@@ -1,8 +1,8 @@
 package com.example.Phase2.service;
 
 
-import dao.LoginDao;
-import dao.SchoolClassDao;
+import com.example.Phase2.dao.LoginDao;
+import com.example.Phase2.dao.SchoolClassDao;
 
 import java.util.logging.Logger;
 

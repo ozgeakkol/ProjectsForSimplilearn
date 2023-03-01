@@ -1,7 +1,6 @@
 package com.example.Phase2.servlet;
 
 import com.example.Phase2.service.LoginService;
-import dao.LoginDao;
 
 import java.io.*;
 import javax.servlet.ServletException;
