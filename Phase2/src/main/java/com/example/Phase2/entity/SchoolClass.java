@@ -22,16 +22,10 @@ import java.util.List;
 public class SchoolClass {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "class_id")
     private int classId;
 
-    private String name;
+    @Column(name = "class_name")
+    private String className;
 
-    @OneToMany
-    @JoinColumn(name = "id")
-    private List<Student> students;
-
-    @OneToMany
-    @JoinColumn(name = "id")
-    private List<Subject> subjects;
 }

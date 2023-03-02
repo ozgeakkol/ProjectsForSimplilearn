@@ -22,13 +22,13 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "student_id")
     private int studentId;
 
-    private String name;
-    private String surname;
+    @Column(name = "student_name")
+    private String studentName;
 
-    @ManyToOne
-    @JoinColumn(name = "classId")
-    private SchoolClass schoolClass;
+    @Column(name = "student_surname")
+    private String studentSurname;
+
 }

@@ -26,9 +26,9 @@
             <% List<SchoolClass> schoolClasses = (List<SchoolClass>) request.getAttribute("schoolClasses");
                 for (SchoolClass schoolClass : schoolClasses) { %>
             <tr>
-                <td><%= schoolClass.getId() %>
+                <td><%= schoolClass.getClassId() %>
                 </td>
-                <td><%= schoolClass.getName() %>
+                <td><%= schoolClass.getClassName() %>
                 </td>
             </tr>
             <% } %>

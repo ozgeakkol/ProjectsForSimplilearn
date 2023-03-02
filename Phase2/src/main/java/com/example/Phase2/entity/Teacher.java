@@ -17,13 +17,13 @@ public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "teacher_id")
     private int teacherId;
 
-    private String name;
-    private String surname;
+    @Column(name = "teacher_name")
+    private String teacherName;
 
-    @OneToMany
-    @JoinColumn(name = "id")
-    private List<Subject> subjects;
+    @Column(name = "teacher_surname")
+    private String teacherSurname;
+
 }

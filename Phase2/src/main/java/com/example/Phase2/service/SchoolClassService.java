@@ -8,7 +8,7 @@ public class SchoolClassService extends BaseService{
 
     public boolean addNewSchoolClass(int id, String name){
         try{
-            SchoolClass schoolClass = SchoolClass.builder().id(id).name(name).build();
+            SchoolClass schoolClass = SchoolClass.builder().classId(id).className(name).build();
             if(!schoolClassDao.isExist(schoolClass)){
                 boolean isInserted = schoolClassDao.insert(schoolClass);
                 return isInserted;

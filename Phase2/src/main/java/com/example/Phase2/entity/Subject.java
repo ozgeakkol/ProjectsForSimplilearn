@@ -1,6 +1,9 @@
 package com.example.Phase2.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,23 +13,21 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Data
 @Entity
 public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "subject_id")
     private int subjectId;
 
-    private String name;
+    @Column(name = "subject_name")
+    private String subjectName;
 
-    @ManyToOne
-    @JoinColumn(name = "teacherId")
-    private Teacher teacher;
 
-    @ManyToOne
-    @JoinColumn(name = "classId")
-    private SchoolClass schoolClass;
 }
 
