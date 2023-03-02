@@ -48,7 +48,6 @@
     <url-pattern>/addSubject</url-pattern>
   </servlet-mapping>
 
-
   <servlet>
     <description></description>
     <display-name>ViewSubject</display-name>
@@ -58,6 +57,17 @@
   <servlet-mapping>
     <servlet-name>ViewSubjectServlet</servlet-name>
     <url-pattern>/viewSubject</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>AddTeacher</display-name>
+    <servlet-name>AddTeacherServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.TeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddTeacherServlet</servlet-name>
+    <url-pattern>/addTeacher</url-pattern>
   </servlet-mapping>
 
 </web-app>
