@@ -37,4 +37,15 @@
     <url-pattern>/viewClass</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <description></description>
+    <display-name>AddSubject</display-name>
+    <servlet-name>AddSubjectServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.SubjectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddSubjectServlet</servlet-name>
+    <url-pattern>/addSubject</url-pattern>
+  </servlet-mapping>
+
 </web-app>
