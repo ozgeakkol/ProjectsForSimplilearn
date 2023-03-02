@@ -17,6 +17,7 @@ body {
 .center a.aToButton {
     display: inline-block;
     padding: 10px 20px;
+    background-color: #7a6b5d;
     color: #fff;
     text-align: center;
     text-decoration: none;
