@@ -14,26 +14,26 @@
 </head>
 <body>
 <h1>You can view class in here!</h1>
-    <div class=center">
-            <table>
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                <% List<SchoolClass> schoolClasses = (List<SchoolClass>) request.getAttribute("schoolClasses");
-                    for (SchoolClass schoolClass : schoolClasses) { %>
-                <tr>
-                    <td><%= schoolClass.getId() %>
-                    </td>
-                    <td><%= schoolClass.getName() %>
-                    </td>
-                </tr>
-                <% } %>
-                </tbody>
-            </table>
+    <div class="center">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% List<SchoolClass> schoolClasses = (List<SchoolClass>) request.getAttribute("schoolClasses");
+                for (SchoolClass schoolClass : schoolClasses) { %>
+            <tr>
+                <td><%= schoolClass.getId() %>
+                </td>
+                <td><%= schoolClass.getName() %>
+                </td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
