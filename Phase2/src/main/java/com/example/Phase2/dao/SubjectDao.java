@@ -7,7 +7,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
+import org.hibernate.query.Query;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class SubjectDao {
@@ -44,6 +47,24 @@ public class SubjectDao {
             return true;
         } catch (ConstraintViolationException e) {
             return false;
+        }
+    }
+
+    public List<Subject> getAll(){
+        try{
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.getTransaction();
+            transaction.begin();
+
+            Query<Subject> query = session.createQuery("from Subject", Subject.class);
+            List<Subject> queries = query.getResultList();
+
+            session.close();
+
+            return queries;
+
+        }catch (Exception e){
+            return Collections.EMPTY_LIST;
         }
     }
 }

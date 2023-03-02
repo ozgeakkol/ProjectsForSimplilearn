@@ -1,6 +1,9 @@
 package com.example.Phase2.service;
 
+import com.example.Phase2.entity.SchoolClass;
 import com.example.Phase2.entity.Subject;
+
+import java.util.List;
 
 public class SubjectService extends BaseService {
 
@@ -18,5 +21,9 @@ public class SubjectService extends BaseService {
             logger.info("Exception occurred! " +e);
             return false;
         }
+    }
+
+    public List<Subject> getAllClass() {
+        return subjectDao.getAll();
     }
 }

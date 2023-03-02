@@ -48,4 +48,16 @@
     <url-pattern>/addSubject</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <description></description>
+    <display-name>ViewSubject</display-name>
+    <servlet-name>ViewSubjectServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.SubjectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewSubjectServlet</servlet-name>
+    <url-pattern>/viewSubject</url-pattern>
+  </servlet-mapping>
+
 </web-app>
