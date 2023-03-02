@@ -70,4 +70,15 @@
     <url-pattern>/addTeacher</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <description></description>
+    <display-name>ViewTeacher</display-name>
+    <servlet-name>ViewTeacherServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.TeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewTeacherServlet</servlet-name>
+    <url-pattern>/viewTeacher</url-pattern>
+  </servlet-mapping>
+
 </web-app>

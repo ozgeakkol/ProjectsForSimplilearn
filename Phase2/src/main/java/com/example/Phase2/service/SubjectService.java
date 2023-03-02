@@ -23,7 +23,7 @@ public class SubjectService extends BaseService {
         }
     }
 
-    public List<Subject> getAllClass() {
+    public List<Subject> getAllSubject() {
         return subjectDao.getAll();
     }
 }

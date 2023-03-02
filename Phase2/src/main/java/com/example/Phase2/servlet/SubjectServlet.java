@@ -1,6 +1,5 @@
 package com.example.Phase2.servlet;
 
-import com.example.Phase2.entity.SchoolClass;
 import com.example.Phase2.entity.Subject;
 import com.example.Phase2.service.SubjectService;
 
@@ -18,7 +17,7 @@ public class SubjectServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        List<Subject> subjects = subjectService.getAllClass();
+        List<Subject> subjects = subjectService.getAllSubject();
 
         request.setAttribute("subjects", subjects);
         request.getRequestDispatcher("viewSubject.jsp").forward(request, response);

@@ -1,7 +1,8 @@
 package com.example.Phase2.service;
 
-import com.example.Phase2.dao.TeacherDao;
 import com.example.Phase2.entity.Teacher;
+
+import java.util.List;
 
 public class TeacherService extends BaseService{
 
@@ -18,5 +19,9 @@ public class TeacherService extends BaseService{
             logger.info("Exception occurred! " +e);
             return false;
         }
+    }
+
+    public List<Teacher> getAllTeacher() {
+        return teacherDao.getAll();
     }
 }
