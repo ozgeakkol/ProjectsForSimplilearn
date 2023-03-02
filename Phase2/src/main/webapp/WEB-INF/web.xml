@@ -19,11 +19,22 @@
     <description></description>
     <display-name>AddClass</display-name>
     <servlet-name>AddClassServlet</servlet-name>
-    <servlet-class>com.example.Phase2.servlet.AddClassServlet</servlet-class>
+    <servlet-class>com.example.Phase2.servlet.ClassServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddClassServlet</servlet-name>
     <url-pattern>/addClass</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>ViewClass</display-name>
+    <servlet-name>ViewClassServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.ClassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewClassServlet</servlet-name>
+    <url-pattern>/viewClass</url-pattern>
   </servlet-mapping>
 
 </web-app>

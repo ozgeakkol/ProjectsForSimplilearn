@@ -2,6 +2,7 @@ package com.example.Phase2.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
@@ -12,6 +13,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Builder
 @Entity
+@Data
 @Table(name = "school_class")
 public class SchoolClass {
 

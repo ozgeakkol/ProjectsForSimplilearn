@@ -1,6 +1,9 @@
 package com.example.Phase2.service;
 
 import com.example.Phase2.entity.SchoolClass;
+
+import java.util.List;
+
 public class SchoolClassService extends BaseService{
 
     public boolean addNewSchoolClass(int id, String name){
@@ -16,5 +19,9 @@ public class SchoolClassService extends BaseService{
             logger.info("Exception occurred! " +e);
             return false;
         }
+    }
+
+    public List<SchoolClass> getAllClass(){
+       return schoolClassDao.getAll();
     }
 }

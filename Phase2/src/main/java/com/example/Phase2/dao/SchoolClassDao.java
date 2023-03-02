@@ -6,7 +6,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.exception.ConstraintViolationException;
+import org.hibernate.query.Query;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class SchoolClassDao {
@@ -45,6 +48,24 @@ public class SchoolClassDao {
             return true;
         }catch (ConstraintViolationException e){
             return false;
+        }
+    }
+
+    public List<SchoolClass> getAll(){
+        try{
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.getTransaction();
+            transaction.begin();
+
+            Query<SchoolClass> query = session.createQuery("from SchoolClass", SchoolClass.class);
+            List<SchoolClass> queries = query.getResultList();
+
+            session.close();
+
+            return queries;
+
+        }catch (Exception e){
+            return Collections.EMPTY_LIST;
         }
     }
 }
