@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>You can add class in here!</h1>
-    <div class="class-div, center">
+    <div class="center">
         <form action="/addClass" method="post">
             <label>Class Id:</label>
             <input name="classId"/>
