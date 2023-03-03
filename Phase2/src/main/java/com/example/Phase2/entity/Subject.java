@@ -33,5 +33,9 @@ public class Subject implements Serializable {
     @JoinColumn(name = "class_id")
     private SchoolClass schoolClass;
 
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
+
 }
 

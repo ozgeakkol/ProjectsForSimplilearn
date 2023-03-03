@@ -4,6 +4,7 @@ import com.example.Phase2.dbConfig.SimplilearnConfig;
 import com.example.Phase2.entity.SchoolClass;
 import com.example.Phase2.entity.Student;
 import com.example.Phase2.entity.Subject;
+import com.example.Phase2.entity.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -79,6 +80,26 @@ public class SubjectDao {
             SchoolClass existClass = session.find(SchoolClass.class, schoolClass.getClassId());
 
             existSubject.setSchoolClass(existClass);
+            session.saveOrUpdate(existSubject);
+
+            transaction.commit();
+            session.close();
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public boolean assignSubjectToTeacher(Subject subject, Teacher teacher){
+        try {
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.getTransaction();
+            transaction.begin();
+
+            Subject existSubject = session.find(Subject.class, subject.getSubjectId());
+            Teacher existTeacher = session.find(Teacher.class, teacher.getTeacherId());
+
+            existSubject.setTeacher(existTeacher);
             session.saveOrUpdate(existSubject);
 
             transaction.commit();

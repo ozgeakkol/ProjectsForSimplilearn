@@ -3,6 +3,7 @@ package com.example.Phase2.service;
 import com.example.Phase2.entity.SchoolClass;
 import com.example.Phase2.entity.Student;
 import com.example.Phase2.entity.Subject;
+import com.example.Phase2.entity.Teacher;
 
 import java.util.List;
 import java.util.Objects;
@@ -35,6 +36,16 @@ public class SubjectService extends BaseService {
 
         if(Objects.nonNull(subject) && Objects.nonNull(schoolClass)){
             return subjectDao.assignSubjectToClass(subject, schoolClass);
+        }
+        return false;
+    }
+
+    public boolean assignSubjectToTeacher(int subjectId, int classId){
+        Subject subject = subjectDao.getSubjectById(subjectId);
+        Teacher teacher = teacherDao.getTeacherById(classId);
+
+        if(Objects.nonNull(subject) && Objects.nonNull(teacher)){
+            return subjectDao.assignSubjectToTeacher(subject, teacher);
         }
         return false;
     }

@@ -34,6 +34,8 @@
         <br>
         <a href="/assignSubjectToClass" class="aToButton">Assign Subject To Class</a>
         <br>
+        <a href="/assignSubjectToTeacher" class="aToButton">Assign Subject To Teacher</a>
+        <br>
         <a href="ClassReport.jsp" class="aToButton">Class Report</a>
     </div>
 

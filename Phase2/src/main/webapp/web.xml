@@ -169,4 +169,26 @@
     <url-pattern>/assignSubject</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <description></description>
+    <display-name>assignSubjectToTeacher</display-name>
+    <servlet-name>assignSubjectToTeacherServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.AssignSubjectToTeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignSubjectToTeacherServlet</servlet-name>
+    <url-pattern>/assignSubjectToTeacher</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>assignSubjectTeacher</display-name>
+    <servlet-name>assignSubjectTeacherServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.AssignSubjectToTeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignSubjectTeacherServlet</servlet-name>
+    <url-pattern>/assignSubjectTeacher</url-pattern>
+  </servlet-mapping>
+
 </web-app>
