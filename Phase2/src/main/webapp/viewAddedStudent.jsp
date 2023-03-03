@@ -1,8 +1,7 @@
 <%@ page import="com.example.Phase2.entity.SchoolClass" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.example.Phase2.entity.Teacher" %>
-<%@ page import="com.example.Phase2.entity.Student" %>
-<%@ page import="java.util.Objects" %><%--
+<%@ page import="com.example.Phase2.entity.Student" %><%--
   Created by IntelliJ IDEA.
   User: ozge
   Date: 1.03.2023
@@ -16,10 +15,10 @@
     <link rel="stylesheet" href="stylesheets/viewClass.css">
 </head>
 <body>
-<h1>You can view student in here!</h1>
+<h1>Student Added!</h1>
 
     <a href="home.jsp">
-        Back To Home Page
+        Back To Student Assign Page
     </a>
     <div class="center">
         <table>
@@ -28,7 +27,6 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Surname</th>
-                <th>Class</th>
             </tr>
             </thead>
             <tbody>
@@ -41,12 +39,6 @@
                 </td>
                 <td><%= student.getStudentSurname() %>
                 </td>
-                <%if(Objects.nonNull(student.getSchoolClass())){%>
-                    <td><%= student.getSchoolClass().getClassName() %>
-                <%}else{%>
-                    <td></td>
-                <%}%>
-                </>
             </tr>
             <% } %>
             </tbody>

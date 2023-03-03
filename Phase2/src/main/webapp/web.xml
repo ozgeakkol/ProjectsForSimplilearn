@@ -103,4 +103,27 @@
     <url-pattern>/viewStudent</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <description></description>
+    <display-name>assignStudentToClass</display-name>
+    <servlet-name>assignStudentToClassServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.AssignStudentToClassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignStudentToClassServlet</servlet-name>
+    <url-pattern>/assignStudentToClass</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>assignStudent</display-name>
+    <servlet-name>assignStudentServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.AssignStudentToClassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignStudentServlet</servlet-name>
+    <url-pattern>/assignStudent</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>

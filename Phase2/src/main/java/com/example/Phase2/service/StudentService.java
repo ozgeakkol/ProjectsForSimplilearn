@@ -1,9 +1,11 @@
 package com.example.Phase2.service;
 
+import com.example.Phase2.entity.SchoolClass;
 import com.example.Phase2.entity.Student;
 import com.example.Phase2.entity.Teacher;
 
 import java.util.List;
+import java.util.Objects;
 
 public class StudentService extends BaseService{
     public boolean addNewStudent(String studentName, String studentSurname) {
@@ -25,4 +27,14 @@ public class StudentService extends BaseService{
         return studentDao.getAll();
     }
 
+
+    public boolean assignStudentToClass(int studentId, int classId){
+        Student student = studentDao.getStudentById(studentId);
+        SchoolClass schoolClass = schoolClassDao.getSchoolClassById(classId);
+
+        if(Objects.nonNull(student) && Objects.nonNull(schoolClass)){
+            return studentDao.assignStudentToClass(student, schoolClass);
+        }
+        return false;
+    }
 }
