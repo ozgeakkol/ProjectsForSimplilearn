@@ -13,16 +13,23 @@
 </head>
 <body>
     <h1>You can add student in here!</h1>
+
+    <a href="home.jsp">
+        Back To Home Page
+    </a>
+
     <div class="center">
+
         <form action="/addStudent" method="post">
             <label>Student Name: </label>
             <input name="studentName"/>
-
+            <br><br>
             <label>Student Surname: </label>
             <input name="studentSurname"/>
             <br><br>
             <button name="add-student" type="submit">Add Student</button>
 
+            <br><br>
             <%
                 Object message = request.getAttribute("infoMessage");
                 if (message != null) { %>

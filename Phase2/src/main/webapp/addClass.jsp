@@ -13,16 +13,22 @@
 </head>
 <body>
     <h1>You can add class in here!</h1>
+
+    <a href="home.jsp">
+        Back To Home Page
+    </a>
+
     <div class="center">
         <form action="/addClass" method="post">
             <label>Class Id:</label>
             <input name="classId"/>
-
+            <br><br>
             <label>Class Name: </label>
             <input name="className"/>
             <br><br>
             <button name="add-class" type="submit">Add Class</button>
 
+            <br><br>
             <%
                 Object message = request.getAttribute("infoMessage");
                 if (message != null) { %>

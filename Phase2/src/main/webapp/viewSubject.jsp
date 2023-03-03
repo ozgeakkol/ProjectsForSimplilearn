@@ -15,6 +15,10 @@
 </head>
 <body>
 <h1>You can view subjects in here!</h1>
+
+    <a href="home.jsp">
+        Back To Home Page
+    </a>
     <div class="center">
         <table>
             <thead>
