@@ -23,7 +23,7 @@
         <a href="/viewTeacher" class="aToButton">View Teacher</a>
         <br>
         <a href="addStudent.jsp" class="aToButton">Add student</a>
-        <a href="viewStudent.jsp" class="aToButton">View Student</a>
+        <a href="/viewStudent" class="aToButton">View Student</a>
 
         <br>
         <hr>

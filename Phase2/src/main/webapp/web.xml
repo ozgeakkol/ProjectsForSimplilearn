@@ -81,4 +81,26 @@
     <url-pattern>/viewTeacher</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <description></description>
+    <display-name>AddStudent</display-name>
+    <servlet-name>AddStudentServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.StudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddStudentServlet</servlet-name>
+    <url-pattern>/addStudent</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>viewStudent</display-name>
+    <servlet-name>viewStudentServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.StudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewStudentServlet</servlet-name>
+    <url-pattern>/viewStudent</url-pattern>
+  </servlet-mapping>
+
 </web-app>
