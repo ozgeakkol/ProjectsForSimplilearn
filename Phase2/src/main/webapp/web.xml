@@ -125,5 +125,26 @@
     <url-pattern>/assignStudent</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <description></description>
+    <display-name>assignTeacherToClass</display-name>
+    <servlet-name>assignTeacherToClassServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.AssignTeacherToClassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignTeacherToClassServlet</servlet-name>
+    <url-pattern>/assignTeacherToClass</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>assignTeacher</display-name>
+    <servlet-name>assignTeacherServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.AssignTeacherToClassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignTeacherServlet</servlet-name>
+    <url-pattern>/assignTeacher</url-pattern>
+  </servlet-mapping>
 
 </web-app>

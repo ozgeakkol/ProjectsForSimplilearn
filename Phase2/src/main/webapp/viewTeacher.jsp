@@ -1,6 +1,7 @@
 <%@ page import="com.example.Phase2.entity.SchoolClass" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.example.Phase2.entity.Teacher" %><%--
+<%@ page import="com.example.Phase2.entity.Teacher" %>
+<%@ page import="java.util.Objects" %><%--
   Created by IntelliJ IDEA.
   User: ozge
   Date: 1.03.2023
@@ -27,6 +28,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Surname</th>
+                <th>Class</th>
             </tr>
             </thead>
             <tbody>
@@ -39,6 +41,11 @@
                 </td>
                 <td><%= teacher.getTeacherSurname() %>
                 </td>
+                <%if(Objects.nonNull(teacher.getSchoolClass())){%>
+                <td><%= teacher.getSchoolClass().getClassName() %>
+                        <%}else{%>
+                <td></td>
+                <%}%>
             </tr>
             <% } %>
             </tbody>

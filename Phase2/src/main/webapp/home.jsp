@@ -30,7 +30,7 @@
 
         <a href="/assignStudentToClass" class="aToButton">Assign Student To Class</a>
         <br>
-        <a href="assignTeacherToClass.jsp" class="aToButton">Assign Teacher To Class</a>
+        <a href="/assignTeacherToClass" class="aToButton">Assign Teacher To Class</a>
         <br>
         <a href="assignSubjectToClass.jsp" class="aToButton">Assign Subject To Class</a>
         <br>

@@ -1,6 +1,8 @@
 package com.example.Phase2.dao;
 
 import com.example.Phase2.dbConfig.SimplilearnConfig;
+import com.example.Phase2.entity.SchoolClass;
+import com.example.Phase2.entity.Student;
 import com.example.Phase2.entity.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -67,5 +69,40 @@ public class TeacherDao {
         }catch (Exception e){
             return Collections.EMPTY_LIST;
         }
+    }
+
+    public boolean assignTeacherToClass(Teacher teacher, SchoolClass schoolClass){
+        try {
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.getTransaction();
+            transaction.begin();
+
+            Teacher existTeacher = session.find(Teacher.class, teacher.getTeacherId());
+            SchoolClass existClass = session.find(SchoolClass.class, schoolClass.getClassId());
+
+            existTeacher.setSchoolClass(existClass);
+            session.saveOrUpdate(existTeacher);
+
+            transaction.commit();
+            session.close();
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public Teacher getTeacherById(int id){
+        try{
+
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.getTransaction();
+            transaction.begin();
+
+            Teacher teacher = session.get(Teacher.class, id);
+            return teacher;
+        }catch (Exception e){
+            return null;
+        }
+
     }
 }

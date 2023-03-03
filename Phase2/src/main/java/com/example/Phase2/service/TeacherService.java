@@ -1,8 +1,10 @@
 package com.example.Phase2.service;
 
+import com.example.Phase2.entity.SchoolClass;
 import com.example.Phase2.entity.Teacher;
 
 import java.util.List;
+import java.util.Objects;
 
 public class TeacherService extends BaseService{
 
@@ -15,7 +17,6 @@ public class TeacherService extends BaseService{
             }
             return false;
         }catch (Exception e){
-            //todo: change log status
             logger.info("Exception occurred! " +e);
             return false;
         }
@@ -23,5 +24,15 @@ public class TeacherService extends BaseService{
 
     public List<Teacher> getAllTeacher() {
         return teacherDao.getAll();
+    }
+
+    public boolean assignTeacherToClass(int teacherId, int classId){
+        Teacher teacher = teacherDao.getTeacherById(teacherId);
+        SchoolClass schoolClass = schoolClassDao.getSchoolClassById(classId);
+
+        if(Objects.nonNull(teacher) && Objects.nonNull(schoolClass)){
+            return teacherDao.assignTeacherToClass(teacher, schoolClass);
+        }
+        return false;
     }
 }
