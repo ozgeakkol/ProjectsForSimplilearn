@@ -29,6 +29,9 @@ public class Subject implements Serializable {
     @Column(name = "subject_name")
     private String subjectName;
 
+    @ManyToOne
+    @JoinColumn(name = "class_id")
+    private SchoolClass schoolClass;
 
 }
 

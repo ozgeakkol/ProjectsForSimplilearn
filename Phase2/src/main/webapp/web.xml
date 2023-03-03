@@ -147,4 +147,26 @@
     <url-pattern>/assignTeacher</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <description></description>
+    <display-name>assignSubjectToClass</display-name>
+    <servlet-name>assignSubjectToClassServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.AssignSubjectToClassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignSubjectToClassServlet</servlet-name>
+    <url-pattern>/assignSubjectToClass</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>assignSubject</display-name>
+    <servlet-name>assignSubjectServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.AssignSubjectToClassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>assignSubjectServlet</servlet-name>
+    <url-pattern>/assignSubject</url-pattern>
+  </servlet-mapping>
+
 </web-app>

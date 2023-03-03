@@ -42,7 +42,7 @@
                 <td><%= teacher.getTeacherSurname() %>
                 </td>
                 <%if(Objects.nonNull(teacher.getSchoolClass())){%>
-                <td><%= teacher.getSchoolClass().getClassName() %>
+                <td><%= teacher.getSchoolClass().getClassName() %></td>
                         <%}else{%>
                 <td></td>
                 <%}%>
