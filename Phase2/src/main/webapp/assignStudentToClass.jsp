@@ -15,12 +15,11 @@
 </head>
 <h1>You can assign student to class in here!</h1>
 <body>
+
+    <a href="home.jsp">
+        Back To Home Page
+    </a>
     <div class="center">
-
-        <a href="home.jsp">
-            Back To Home Page
-        </a>
-
         <br><br>
         <form action="/assignStudent" method="post">
 

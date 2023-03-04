@@ -16,11 +16,12 @@
 </head>
 <h1>You can assign subject to class in here!</h1>
 <body>
-    <div class="center">
 
-        <a href="home.jsp">
-            Back To Home Page
-        </a>
+    <a href="home.jsp">
+        Back To Home Page
+    </a>
+
+    <div class="center">
 
         <br><br>
         <form action="/assignSubject" method="post">

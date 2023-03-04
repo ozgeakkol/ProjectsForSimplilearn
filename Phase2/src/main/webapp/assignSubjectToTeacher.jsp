@@ -17,11 +17,11 @@
 </head>
 <h1>You can assign subject to teacher in here!</h1>
 <body>
-    <div class="center">
 
-        <a href="home.jsp">
-            Back To Home Page
-        </a>
+    <a href="home.jsp">
+        Back To Home Page
+    </a>
+    <div class="center">
 
         <br><br>
         <form action="/assignSubjectTeacher" method="post">
