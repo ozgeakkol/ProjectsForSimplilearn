@@ -26,7 +26,6 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Class</th>
                 <th>Teacher</th>
             </tr>
             </thead>
@@ -38,11 +37,6 @@
                 </td>
                 <td><%= subject.getSubjectName() %>
                 </td>
-                <%if(Objects.nonNull(subject.getSchoolClass())){%>
-                <td><%= subject.getSchoolClass().getClassName() %></td>
-                <%}else{%>
-                <td></td>
-                <%}%>
                 <%if(Objects.nonNull(subject.getTeacher())){%>
                 <td><%= subject.getTeacher().getTeacherName() + " " + subject.getTeacher().getTeacherSurname() %></td>
                 <%}else{%>
