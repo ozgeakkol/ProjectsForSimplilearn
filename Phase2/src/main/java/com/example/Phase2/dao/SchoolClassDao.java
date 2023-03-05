@@ -2,7 +2,6 @@ package com.example.Phase2.dao;
 
 import com.example.Phase2.dbConfig.SimplilearnConfig;
 import com.example.Phase2.entity.SchoolClass;
-import com.example.Phase2.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -77,6 +76,8 @@ public class SchoolClassDao {
             transaction.begin();
 
             SchoolClass schoolClass = session.get(SchoolClass.class, id);
+
+            session.close();
             return schoolClass;
         }catch (Exception e){
             return null;

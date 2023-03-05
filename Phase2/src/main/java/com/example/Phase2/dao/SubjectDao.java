@@ -124,4 +124,25 @@ public class SubjectDao {
         }
 
     }
+
+    public List<Subject> getSubjectByClassId(int id){
+        try{
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.getTransaction();
+            transaction.begin();
+
+            String subjectSql = "SELECT sub FROM Subject sub WHERE  sub.schoolClass.classId = :id";
+            Query<Subject> subjectQuery = session.createQuery(subjectSql, Subject.class);
+            subjectQuery.setParameter("id", id);
+            List<Subject> subjects = subjectQuery.getResultList();
+
+            session.close();
+
+            return subjects;
+        }catch (Exception e){
+            return Collections.EMPTY_LIST;
+        }
+
+    }
+
 }

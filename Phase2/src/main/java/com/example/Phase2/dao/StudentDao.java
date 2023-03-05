@@ -105,4 +105,23 @@ public class StudentDao {
         }
 
     }
+
+    public List<Student> getStudentByClassId(int id){
+        try{
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.getTransaction();
+            transaction.begin();
+
+            String studentSql = "SELECT s FROM Student s WHERE  s.schoolClass.classId = :id";
+            Query<Student> studentQuery = session.createQuery(studentSql, Student.class);
+            studentQuery.setParameter("id", id);
+            List<Student> students = studentQuery.getResultList();
+
+            session.close();
+            return students;
+        }catch (Exception e){
+            return Collections.EMPTY_LIST;
+        }
+
+    }
 }

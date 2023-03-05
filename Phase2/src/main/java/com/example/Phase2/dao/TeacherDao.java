@@ -105,4 +105,24 @@ public class TeacherDao {
         }
 
     }
+
+    public List<Teacher> getTeacherByClassId(int id){
+        try{
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.getTransaction();
+            transaction.begin();
+
+            String teacherSql = "SELECT t FROM Teacher t WHERE  t.schoolClass.classId = :id";
+            Query<Teacher> teacherQuery = session.createQuery(teacherSql, Teacher.class);
+            teacherQuery.setParameter("id", id);
+            List<Teacher> teachers = teacherQuery.getResultList();
+
+            session.close();
+
+            return teachers;
+        }catch (Exception e){
+            return null;
+        }
+
+    }
 }

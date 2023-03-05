@@ -32,11 +32,11 @@
         <br>
         <a href="/assignTeacherToClass" class="aToButton">Assign Teacher To Class</a>
         <br>
-        <!--<a href="/assignSubjectToClass" class="aToButton">Assign Subject To Class</a>
-        <br>-->
-        <a href="/assignSubjectToTeacher" class="aToButton">Assign Subject To Teacher</a>
+        <a href="/assignSubjectToClass" class="aToButton">Assign Subject To Class</a>
         <br>
-        <a href="ClassReport.jsp" class="aToButton">Class Report</a>
+       <!-- <a href="/assignSubjectToTeacher" class="aToButton">Assign Subject To Teacher</a>
+        <br>-->
+        <a href="/viewClassReport" class="aToButton">Class Report</a>
     </div>
 
 </body>

@@ -191,4 +191,28 @@
     <url-pattern>/assignSubjectTeacher</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <description></description>
+    <display-name>viewClassReport</display-name>
+    <servlet-name>viewClassReportServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.ClassReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewClassReportServlet</servlet-name>
+    <url-pattern>/viewClassReport</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <description></description>
+    <display-name>viewReport</display-name>
+    <servlet-name>viewReportServlet</servlet-name>
+    <servlet-class>com.example.Phase2.servlet.ClassReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewReportServlet</servlet-name>
+    <url-pattern>/viewReport</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
