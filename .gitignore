@@ -1,5 +1,15 @@
 *.class
-.idea/**
 *.jar
 !libs/**/*.jar
 target/
+
+### IntelliJ IDEA ###
+.idea/**
+*.iws
+*.iml
+*.ipr
+
+HELP.md
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
