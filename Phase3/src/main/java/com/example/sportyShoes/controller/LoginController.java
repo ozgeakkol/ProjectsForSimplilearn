@@ -17,15 +17,9 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
-    public String open(Model mm) {
-        mm.addAttribute("login", new Login());
-        return "index";
-    }
 
     @RequestMapping(value = "/signIn", method = RequestMethod.POST)
     public String signIn(@ModelAttribute Login login, Model model) {
-        System.out.println("login!!!------" + login);
         log.info("[signIn] start! login={}", login);
         String result = loginService.signIn(login);
 
@@ -38,9 +32,20 @@ public class LoginController {
         }
     }
 
-    @RequestMapping(value = "/signUp", method = RequestMethod.GET)
-    public String signUp(Model model){
-        model.addAttribute("login", new Login());
-        return "signUp";
+    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
+    public String signUp(@ModelAttribute Login login, Model model) {
+        log.info("[signUp] start! login={}", login);
+
+        //TODO: change logic
+        String result = loginService.signIn(login);
+        if(result.equals("Customer login successfully")) {
+            return "customerHome";
+        }else if(result.equals("Admin login successfully")) {
+            return "adminHome";
+        }else {
+            return "index";
+        }
     }
+
+
 }
