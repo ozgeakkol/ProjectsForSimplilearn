@@ -15,9 +15,9 @@ import javax.persistence.Id;
 @Entity
 public class Login {
     @Id
-    private String emailid;
+    private String emailId;
     private String password;
-    private String typeofuser;
+    private String typeOfUser;
    /* @OneToMany
     @JoinColumn(name="emailid")	// FK
     private List<Orders> listOfOrders;

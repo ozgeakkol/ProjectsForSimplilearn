@@ -9,13 +9,13 @@
 <h2>SignUp Page!</h2>
 <form action=# th:action="@{/signUp}" th:object="${login}" method="post">
     <label>EmailId</label>
-    <input type="email" th:field="*{emailid}" required/><br/>
+    <input type="email" th:field="*{emailId}" required/><br/>
     <label>Password</label>
     <input type="password" th:field="*{password}" required/><br/>
     <br>
     <label>Typeofuser</label><br/>
 
-    <select th:field="*{typeofuser}" required>
+    <select th:field="*{typeOfUser}" required>
         <option value="" disabled selected>Select an option</option>
         <option value="admin">Admin</option>
         <option value="customer">Customer</option>

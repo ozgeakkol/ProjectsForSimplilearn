@@ -10,14 +10,14 @@ import org.springframework.stereotype.Repository;
 public interface LoginRepository extends JpaRepository<Login, String> {
 
     // JPQL (Java Persistence Query language )
-    @Query("select l from Login l where l.emailid = :emailid and l.password = :password and l.typeofuser=:typeofuser")
-    public Login signIn(@Param("emailid") String emailid,
+    @Query("select l from Login l where l.emailId = :emailId and l.password = :password and l.typeOfUser=:typeOfUser")
+    public Login signIn(@Param("emailId") String emailId,
                         @Param("password") String password,
-                        @Param("typeofuser") String typeofuser);
+                        @Param("typeOfUser") String typeOfUser);
 
     // Native Query
-    @Query(value="select * from login l where l.emailid = :emailid and l.password = :password and l.typeofuser=:typeofuser",nativeQuery = true)
-    public Login signInWithNative(@Param("emailid") String emailid,
+    @Query(value="select * from login l where l.emailId = :emailId and l.password = :password and l.typeOfUser=:typeOfUser",nativeQuery = true)
+    public Login signInWithNative(@Param("emailId") String emailId,
                                   @Param("password") String password,
-                                  @Param("typeofuser") String typeofuser);
+                                  @Param("typeOfUser") String typeOfUser);
 }

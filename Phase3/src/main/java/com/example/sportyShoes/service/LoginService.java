@@ -15,10 +15,10 @@ public class LoginService {
     private LoginRepository loginRepository;
 
     public String signUp(Login login) {
-        if(login.getTypeofuser().equalsIgnoreCase("admin")) {
+        if(login.getTypeOfUser().equalsIgnoreCase("admin")) {
             return "Admin account can't create";
         }else {
-            Optional<Login> result = loginRepository.findById(login.getEmailid());
+            Optional<Login> result = loginRepository.findById(login.getEmailId());
             if(result.isPresent()) {
                 return "Already account present";
             }else {
@@ -31,12 +31,12 @@ public class LoginService {
 
     public String signIn(Login login) {
         log.info("[signIn] user will be sign in!");
-        Login ll = loginRepository.signIn(login.getEmailid(), login.getPassword(), login.getTypeofuser());
+        Login ll = loginRepository.signIn(login.getEmailId(), login.getPassword(), login.getTypeOfUser());
         if(ll==null) {
             log.info("[signIn] login user could not be found!");
             return "Invalid emailid or password";
         }else {
-            if(ll.getTypeofuser().equalsIgnoreCase("admin")) {
+            if(ll.getTypeOfUser().equalsIgnoreCase("admin")) {
                 log.info("[signIn] Admin login successfully!");
                 return "Admin login successfully";
             }else {
