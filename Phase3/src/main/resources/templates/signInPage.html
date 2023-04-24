@@ -9,12 +9,18 @@
 <h2>Sporty Shoes</h2>
 <form action="#" th:action="@{/signIn}" th:object="${login}" method="post">
     <label>EmailId</label>
-    <input type="email" th:field="*{emailid}"/><br/>
+    <input type="email" th:field="*{emailid}" required/><br/>
     <label>Password</label>
-    <input type="password" th:field="*{password}"/><br/>
+    <input type="password" th:field="*{password}" required/><br/>
     <label>Typeofuser</label><br/>
-    <input type="radio"  value="admin" th:field="*{typeofuser}"/>Admin
-    <input type="radio" value="customer" th:field="*{typeofuser}"/>Customer
+
+    <select th:field="*{typeofuser}" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="admin">Admin</option>
+        <option value="customer">Customer</option>
+    </select>
+
+
     <br/>
     <input type="submit" value="Sign In"/>
 </form>

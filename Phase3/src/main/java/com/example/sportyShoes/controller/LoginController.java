@@ -28,6 +28,7 @@ public class LoginController {
         }else if(result.equals("Admin login successfully")) {
             return "adminHome";
         }else {
+            model.addAttribute("errorMessage", result);
             return "index";
         }
     }
@@ -37,14 +38,12 @@ public class LoginController {
         log.info("[signUp] start! login={}", login);
 
         //TODO: change logic
-        String result = loginService.signIn(login);
-        if(result.equals("Customer login successfully")) {
+        String result = loginService.signUp(login);
+        if(result.equals("Account created successfully")) {
             return "customerHome";
-        }else if(result.equals("Admin login successfully")) {
-            return "adminHome";
-        }else {
-            return "index";
         }
+        model.addAttribute("errorMessage", result);
+        return "signUpPage";
     }
 
 
