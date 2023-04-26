@@ -20,4 +20,14 @@ public class HompageController {
         model.addAttribute("login", new Login());
         return "signUpPage";
     }
+
+    @RequestMapping(value = "/adminHome", method = RequestMethod.GET)
+    public String adminHome(){
+        return "adminHome";
+    }
+
+    @RequestMapping(value = "/customerHome", method = RequestMethod.GET)
+    public String customerHome(){
+        return "customerHome";
+    }
 }
