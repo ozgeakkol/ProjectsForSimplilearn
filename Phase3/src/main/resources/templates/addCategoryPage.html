@@ -12,6 +12,7 @@
     <input type="text" th:field="*{categoryName}"/><br/>
     <input type="submit" value="Store Category"/>
 </form>
+<p th:text="${categoryInfoMessage}"></p>
 <br/>
 <a th:href="@{/adminHome}">Back</a>
 </body>
