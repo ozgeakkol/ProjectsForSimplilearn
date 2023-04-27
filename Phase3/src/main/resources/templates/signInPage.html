@@ -15,7 +15,7 @@
     <label>Typeofuser</label><br/>
 
     <select th:field="*{typeOfUser}" required>
-        <option value="" disabled selected>Select an option</option>
+        <option value=""th:disabled th:selected="selected">Select an option</option>
         <option value="admin">Admin</option>
         <option value="customer">Customer</option>
     </select>
