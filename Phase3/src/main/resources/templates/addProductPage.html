@@ -6,7 +6,6 @@
     <title>Insert title here</title>
 </head>
 <body>
-<span th:text="${msg}"></span>
 <h2>Add Product</h2>
 <form action="#" th:action="@{/addProduct}" th:object="${product}" method="post">
     <label>Product Name</label>
@@ -30,6 +29,8 @@
     <input type="submit" value="Store Product"/>
 </form>
 <br/>
+<span th:text="${msg}"></span>
+<br>
 <a th:href="@{/adminHome}">Back</a>
 </body>
 </html>
