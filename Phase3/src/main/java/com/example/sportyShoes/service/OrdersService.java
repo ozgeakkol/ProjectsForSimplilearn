@@ -1,6 +1,7 @@
 package com.example.sportyShoes.service;
 
 import com.example.sportyShoes.constants.Result;
+import com.example.sportyShoes.model.Category;
 import com.example.sportyShoes.model.Orders;
 import com.example.sportyShoes.repository.OrdersRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -34,6 +36,16 @@ public class OrdersService {
 
     public List<Orders> viewAllOrderDetails() {
         return ordersRepository.findAll();
+    }
+
+    public List<Orders> getAllOrders(String emailId){
+        try{
+            log.info("[getAllOrders] started!");
+            return ordersRepository.findOrdersByEmailId(emailId);
+        }catch (Exception e){
+            log.error("[getAllOrders] Exception occurred!", e);
+            return Collections.emptyList();
+        }
     }
 
     public Orders createOrder(int productId, String emailId, String address){

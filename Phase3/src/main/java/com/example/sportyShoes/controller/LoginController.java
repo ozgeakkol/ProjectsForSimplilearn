@@ -20,6 +20,11 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    public String open(Model mm, HttpSession session) {
+        session.removeAttribute("emailId");
+        return "index";
+    }
 
     @RequestMapping(value = "/signIn", method = RequestMethod.POST)
     public String signIn(@ModelAttribute Login login, Model model, HttpSession session) {

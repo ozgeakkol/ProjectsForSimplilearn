@@ -1,5 +1,6 @@
 package com.example.sportyShoes.controller;
 
+import com.example.sportyShoes.model.Category;
 import com.example.sportyShoes.model.Orders;
 import com.example.sportyShoes.model.Product;
 import com.example.sportyShoes.service.CategoryService;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -52,5 +55,19 @@ public class OrderController {
         return "redirect:/customerHome";
     }
 
-
+    @RequestMapping(value = "/viewMyOrders", method = RequestMethod.GET)
+    public String viewMyOrders(Model model, HttpSession session) {
+        model.addAttribute("orders", new Category());
+        String emailId = (String) session.getAttribute("emailId");
+        List<Orders> orders = ordersService.getAllOrders(emailId);
+        if(!orders.isEmpty()){
+            log.info("[viewMyOrders] orders will be shown in page! orders={}", orders);
+            model.addAttribute("orders", orders);
+            return "myOrdersPage";
+        }
+        log.warn("[viewMyOrders] there is no orders!");
+        model.addAttribute("orderInfo", "there isn't any category");
+        model.addAttribute("orders", Collections.emptyList());
+        return "myOrdersPage";
+    }
 }
