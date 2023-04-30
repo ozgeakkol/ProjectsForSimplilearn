@@ -1,5 +1,6 @@
 package com.example.sportyShoes.controller;
 
+import com.example.sportyShoes.constants.Result;
 import com.example.sportyShoes.model.Category;
 import com.example.sportyShoes.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
@@ -43,12 +44,8 @@ public class CategoryController {
 
     @RequestMapping(value = "/addCategory", method = RequestMethod.POST)
     public String addCategory(@ModelAttribute Category category, Model model){
-        boolean categoryInserted = categoryService.insertCategory(category);
-        if(categoryInserted){
-            model.addAttribute("categoryInfoMessage","Category created!");
-            return "addCategoryPage";
-        }
-        model.addAttribute("categoryInfoMessage","Category could not be created!");
+        Result result = categoryService.insertCategory(category);
+        model.addAttribute("categoryInfoMessage", result.getResultMessage());
         return "addCategoryPage";
     }
 }

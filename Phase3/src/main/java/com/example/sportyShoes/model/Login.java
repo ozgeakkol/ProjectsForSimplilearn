@@ -7,6 +7,9 @@ import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Data
 @ToString
@@ -18,9 +21,14 @@ public class Login {
     private String emailId;
     private String password;
     private String typeOfUser;
-   /* @OneToMany
-    @JoinColumn(name="emailid")	// FK
+
+
+    @OneToMany
+    @JoinColumn(name="emailId")	// FK
     private List<Orders> listOfOrders;
+
+   /* @OneToMany(mappedBy = "login")
+    private List<Orders> orders;
 
     */
 

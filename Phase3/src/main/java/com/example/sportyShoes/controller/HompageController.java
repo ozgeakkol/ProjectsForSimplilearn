@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HompageController {
 
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(){
+        return "index";
+    }
+
     @RequestMapping(value = "/signInPage", method = RequestMethod.GET)
     public String signInPage(Model model) {
         model.addAttribute("login", new Login());

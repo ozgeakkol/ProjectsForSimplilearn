@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <title>Insert title here</title>
+</head>
+<body>
+<span th:text="${msg}"></span>
+<h2>Give Order</h2>
+<form method="post" th:action="@{/giveOrder/{productId}(productId=${product.pId})}">
+
+    <label>Product Name: </label>
+    <p th:text="${product.productName}"></p>
+    <img th:src="${product.productImage}" width="50px" height="50px"/>
+    <br>
+    <label>Price: </label>
+    <p th:text="${product.price}"></p>
+    <br>
+    <label>Category: </label>
+    <p th:text="${product.categoryId}"></p>
+    <br>
+    <label>Address</label>
+    <input type="text" name="address" required/><br/>
+
+    <input type="submit" value="Give Order"/>
+</form>
+<br/>
+<a th:href="@{/customerHome}">Back</a>
+</body>
+</html>

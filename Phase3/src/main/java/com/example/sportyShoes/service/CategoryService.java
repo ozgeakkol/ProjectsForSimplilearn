@@ -1,5 +1,6 @@
 package com.example.sportyShoes.service;
 
+import com.example.sportyShoes.constants.Result;
 import com.example.sportyShoes.model.Category;
 import com.example.sportyShoes.repository.CategoryRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -27,27 +28,25 @@ public class CategoryService {
         }
     }
 
-    public boolean insertCategory(Category category){
-
-        //TODO: return meaningful string to show the correct response
+    public Result insertCategory(Category category){
         try {
             log.info("[insertCategory] started! record will be inserted! :: category ={}", category);
             if(!isCategoryAlreadyExists(category)){
                 categoryRepository.save(category);
                 log.info("[insertCategory] new category inserted! :: category ={}", category);
-                return true;
+                return Result.CATEGORY_INSERTED;
             }
+            return Result.CATEGORY_ALREADY_EXIST;
         }catch (Exception e){
             log.error("[insertCategory] Exception occurred! Category could not be added!");
         }
-        return false;
+        return Result.CATEGORY_ADD_ERROR;
     }
 
     public boolean isCategoryAlreadyExists(Category category){
         try {
             log.info("[isCategoryAlreadyExists] started! existence will be checked! :: category ={}", category);
-            boolean exists = categoryRepository.existsByCategoryName(category.getCategoryName());
-            return exists;
+            return categoryRepository.existsByCategoryName(category.getCategoryName());
         }catch (DataAccessException dataAccessException){
             log.error("[isCategoryAlreadyExists] Exception occurred while getting data from db!", dataAccessException);
         }catch (Exception e){
