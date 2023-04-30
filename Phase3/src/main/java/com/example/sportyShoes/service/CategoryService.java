@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -41,6 +42,19 @@ public class CategoryService {
             log.error("[insertCategory] Exception occurred! Category could not be added!");
         }
         return Result.CATEGORY_ADD_ERROR;
+    }
+
+    public String getCategoryName(Integer cId){
+        try{
+            log.info("[getAllCategories] started!");
+            Optional<Category> categoryOptional = categoryRepository.findById(cId);
+            if(categoryOptional.isPresent()){
+                return categoryOptional.get().getCategoryName();
+            }
+        }catch (Exception e){
+            log.error("[getAllCategories] Exception occurred!", e);
+        }
+        return "";
     }
 
     public boolean isCategoryAlreadyExists(Category category){

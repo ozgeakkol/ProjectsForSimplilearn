@@ -2,6 +2,7 @@ package com.example.sportyShoes.controller;
 
 import com.example.sportyShoes.model.Orders;
 import com.example.sportyShoes.model.Product;
+import com.example.sportyShoes.service.CategoryService;
 import com.example.sportyShoes.service.OrdersService;
 import com.example.sportyShoes.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
@@ -27,11 +28,15 @@ public class OrderController {
     @Autowired
     private OrdersService ordersService;
 
+    @Autowired
+    private CategoryService categoryService;
+
     @RequestMapping(value = "/getOrderPage/{productId}", method = RequestMethod.GET)
     public String getOrderPage(@PathVariable int productId, Model model, HttpSession session) {
         Optional<Product> product = productService.getProduct(productId);
         if (product.isPresent()) {
             model.addAttribute("product", product.get());
+            model.addAttribute("categoryName", categoryService.getCategoryName(product.get().getCategoryId()));
             model.addAttribute("address", new String());
             return "giveOrderPage";
         }
