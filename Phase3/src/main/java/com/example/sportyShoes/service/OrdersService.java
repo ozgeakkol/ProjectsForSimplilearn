@@ -38,15 +38,26 @@ public class OrdersService {
         return ordersRepository.findAll();
     }
 
-    public List<Orders> getAllOrders(String emailId){
+    public List<Orders> getAllOrdersForUser(String emailId){
+        try{
+            log.info("[getAllOrdersForUser] started!");
+            return ordersRepository.findOrdersByEmailId(emailId);
+        }catch (Exception e){
+            log.error("[getAllOrdersForUser] Exception occurred!", e);
+            return Collections.emptyList();
+        }
+    }
+
+    public List<Orders> getAllOrders(){
         try{
             log.info("[getAllOrders] started!");
-            return ordersRepository.findOrdersByEmailId(emailId);
+            return ordersRepository.findAll();
         }catch (Exception e){
             log.error("[getAllOrders] Exception occurred!", e);
             return Collections.emptyList();
         }
     }
+
 
     public Orders createOrder(int productId, String emailId, String address){
         Orders order = new Orders();

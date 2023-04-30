@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
@@ -59,15 +58,33 @@ public class OrderController {
     public String viewMyOrders(Model model, HttpSession session) {
         model.addAttribute("orders", new Category());
         String emailId = (String) session.getAttribute("emailId");
-        List<Orders> orders = ordersService.getAllOrders(emailId);
-        if(!orders.isEmpty()){
+        List<Orders> orders = ordersService.getAllOrdersForUser(emailId);
+        if (!orders.isEmpty()) {
             log.info("[viewMyOrders] orders will be shown in page! orders={}", orders);
             model.addAttribute("orders", orders);
             return "myOrdersPage";
         }
         log.warn("[viewMyOrders] there is no orders!");
-        model.addAttribute("orderInfo", "there isn't any category");
+        model.addAttribute("orderInfo", "there isn't any order");
         model.addAttribute("orders", Collections.emptyList());
         return "myOrdersPage";
     }
+
+
+    @RequestMapping(value = "/viewAllOrders", method = RequestMethod.GET)
+    public String viewAllOrdersPage(Model model, HttpSession session) {
+        model.addAttribute("orders", new Category());
+        List<Orders> orders = ordersService.getAllOrders();
+        if (!orders.isEmpty()) {
+            log.info("[viewAllOrdersPage] orders will be shown in page! orders={}", orders);
+            model.addAttribute("orders", orders);
+            return "viewAllOrdersPage";
+        }
+        log.warn("[viewAllOrdersPage] there is no orders!");
+        model.addAttribute("orderInfo", "there isn't any order");
+        model.addAttribute("orders", Collections.emptyList());
+        return "viewAllOrdersPage";
+    }
+
+
 }
